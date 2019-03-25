@@ -1,0 +1,18 @@
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="dao" class="com.examples.spring.employeeApp.EmployeeDAO">
+		<constructor-arg name="driver" value="com.mysql.jdbc.Driver" />	
+		<constructor-arg name="url" value="jdbc:mysql://localhost/EmployeeManagement_db" />
+		<constructor-arg name="user" value="root" />
+		<constructor-arg name="pass" value="" />
+	</bean>
+	
+	<bean id="service" class="com.examples.spring.employeeApp.EmployeeManage" autowire="constructor">
+	</bean>
+
+</beans>
