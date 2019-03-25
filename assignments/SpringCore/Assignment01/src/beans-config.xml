@@ -1,0 +1,32 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="date" class="java.time.LocalDate" factory-method="parse">
+		<constructor-arg index="0" value="1996-07-23"/>
+	</bean>
+	<bean id="addressBean" class="com.example.spring.core.Address">
+		<constructor-arg name="city" value="Kolkata"/>
+		<constructor-arg name="pin" value="700098"/>
+		<constructor-arg name="country" value="India"/>
+	</bean>
+	<bean id="employee" class="com.example.spring.core.Employee">
+		<constructor-arg name="id" value="1"/>
+		<constructor-arg name="name" value="Priyanshu"/>
+		<constructor-arg name="address" ref="addressBean"/>
+		<constructor-arg name="salary" value="22000"/>
+		<property name="dob" ref="date" />
+		<property name="designation" value="soft-dev" />
+		<property name="skills">
+			<list>
+				<value>C++</value>
+				<value>Java</value>
+				<value>Python</value>
+			</list>
+		</property>
+		<property name="fulltime" value="true" />
+	</bean>
+
+
+</beans>
