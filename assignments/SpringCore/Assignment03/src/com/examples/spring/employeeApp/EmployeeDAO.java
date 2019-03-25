@@ -40,20 +40,7 @@ public class EmployeeDAO {
 			}
 
 	 }
-	/* EmployeeDAO() {
-			try {
-				Class.forName(JDBC_DRIVER);
-				conn = DriverManager.getConnection(DB_URL, USER, PASS);
-				System.out.println("connect to db");
-			} catch (ClassNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-*/
+	
 	 
 	public int addIntoDB(Employee emp) {
 		// TODO Auto-generated method stub
