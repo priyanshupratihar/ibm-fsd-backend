@@ -1,4 +1,5 @@
 package com.examples.spring.employeeApp;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -6,6 +7,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -254,7 +256,52 @@ public class EmployeeManage {
 		}
 	}
 	
-	
+	public void exportEmp() {
+		// TODO Auto-generated method stub
+		List<Employee> empList = dao.retriveEmpFromDB();
+		
+		try {
+			File file = new File("C:\\Users\\PRIYANSHUPRATIHAR\\Desktop\\EmpManagement.txt");
+			PrintWriter pw = new PrintWriter(file);
+			
+			for(Employee emp : empList) {
+				
+				pw.printf("%s,%s,%d,%d,%s%n", emp.getEid(),emp.getName(),emp.getSalary(),emp.getAge(),emp.getDept());
+			}
+			pw.close();
+			System.out.println("Export Successfull");
+			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	public void importEmp() {
+		// TODO Auto-generated method stub
+		int empCount = 0;
+		try {
+			File file = new File("C:\\\\Users\\\\PRIYANSHUPRATIHAR\\\\Desktop\\\\EmpManagement.txt");
+			Scanner sc = new Scanner(file);
+			while(sc.hasNextLine()) {
+			
+				String word[] = sc.nextLine().split(",");
+				String eid = word[0];
+				String name=word[1];
+				int salary = Integer.parseInt(word[2]);
+				int age = Integer.parseInt(word[3]);
+				String dept = word[4];
+				
+				Employee emp = new Employee(eid,name,salary,age,dept);
+				int status = dao.addIntoDB(emp);
+				if(status>0)
+				empCount++;
+			}
+			sc.close();
+			System.out.println(empCount+" employee(s) imported successfully..");
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
 
 	
 	

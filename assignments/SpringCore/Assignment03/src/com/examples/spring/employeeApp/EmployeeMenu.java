@@ -14,7 +14,7 @@ import com.examples.spring.employeeApp.EmployeeManage;
 
 public class EmployeeMenu {
 
-	public static void main(String[] args) throws  ClassNotFoundException {
+	public static void main(String[] args) throws CustomException, ClassNotFoundException {
 		// TODO Auto-generated method stub
 		@SuppressWarnings("resource")
 		Scanner sc=new Scanner(System.in);
@@ -34,8 +34,10 @@ public class EmployeeMenu {
 			System.out.println("Press '4' - update from database");
 			System.out.println("Press '5' - Searching from database");
 			System.out.println("Press '6' - Employee Statistics from database");
+			System.out.println("Press '7' -  Export");
+			System.out.println("Press '8' -  Import");
 			
-			System.out.println("Press '7' -  Exit");
+			System.out.println("Press '9' -  Exit");
 			System.out.println("\n");
 			System.out.println("Enter Your Option : ");
 			int	type=sc.nextInt();
@@ -64,9 +66,16 @@ public class EmployeeMenu {
 			 empManage.statisticsEmp();
 			 break;
 			
-		case 7:
-			System.exit(0);
+		 case 7:
+			 empManage.exportEmp();
+			 break;
+			 
+		 case 8:
+			 empManage.importEmp();
+			 break;
 			
+		case 9:
+			System.exit(0);
 		
 		}
 		}

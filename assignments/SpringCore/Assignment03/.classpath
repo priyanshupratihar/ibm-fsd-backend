@@ -8,5 +8,6 @@
 	<classpathentry kind="lib" path="lib/spring-context-5.1.5.RELEASE.jar"/>
 	<classpathentry kind="lib" path="lib/spring-core-5.1.5.RELEASE.jar"/>
 	<classpathentry kind="lib" path="lib/spring-expression-5.1.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.46.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
