@@ -27,10 +27,7 @@ public class EmployeeHomeServlet extends HttpServlet {
 	{
 		this.doPost(request, response);
 	}
-	
-	/*
-	 * Called for every HTTP request
-	 */
+
 	public void doPost(HttpServletRequest request,  HttpServletResponse response) throws IOException, ServletException
 	{
 		HttpSession session = request.getSession();

@@ -1,0 +1,4 @@
+com\examples\spring\web\mvc\HomeController.class
+com\examples\spring\web\mvc\RegistrationController.class
+com\examples\spring\web\mvc\LoginController.class
+com\examples\spring\web\mvc\model\User.class

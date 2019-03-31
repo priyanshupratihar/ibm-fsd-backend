@@ -1,0 +1,9 @@
+<context>
+<Resource name="jdbc/web_employee_management"
+		auth="Container" type="javax.sql.DataSource"
+		maxActive="20" maxIdle="5" maxWait="10000"
+		username="root" password=""
+		driverClassName="com.mysql.jdbc.Driver"
+		url="jdbc:mysql://localhost/employeemanagement_db">
+</Resource>
+</context>
