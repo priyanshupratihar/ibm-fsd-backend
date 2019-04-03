@@ -1,0 +1,3 @@
+com\examples\spring\hibernate\JpaConfiguration.class
+com\examples\spring\hibernate\Order.class
+com\examples\spring\hibernate\Item.class
